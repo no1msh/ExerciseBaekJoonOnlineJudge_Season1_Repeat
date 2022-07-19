@@ -3,6 +3,15 @@ package chapter13_geometry;
 import java.io.*;
 
 public class No_4153 {
+
+    public static void printResult(boolean condition) {
+        if (condition) {
+            System.out.println("right");
+        } else {
+            System.out.println("wrong");
+        }
+    }
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -16,25 +25,12 @@ public class No_4153 {
             int max = Math.max(Math.max(a, b), c);
 
             if (max == a) {
-                if (a * a == b * b + c * c) {
-                    System.out.println("right");
-                } else {
-                    System.out.println("wrong");
-                }
-            } else if (max == b){
-                if( b * b == a * a + c * c){
-                    System.out.println("right");
-                } else {
-                    System.out.println("wrong");
-                }
+                printResult(a * a == b * b + c * c);
+            } else if (max == b) {
+                printResult(b * b == a * a + c * c);
             } else {
-                if( c * c == a * a + b * b){
-                    System.out.println("right");
-                } else {
-                    System.out.println("wrong");
-                }
+                printResult(c * c == a * a + b * b);
             }
-
         }
     }
 }
